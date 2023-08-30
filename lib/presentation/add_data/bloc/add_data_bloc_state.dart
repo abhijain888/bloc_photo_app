@@ -28,4 +28,7 @@ class AddDataState with _$AddDataState {
     required String description,
     required File file,
   }) = UploadingMediaState;
+
+  const factory AddDataState.uploadSuccess() = UploadSuccessState;
+  const factory AddDataState.uploadError() = UploadErrorState;
 }

@@ -865,6 +865,8 @@ mixin _$AddDataState {
     required TResult Function(
             MediaType mediaType, String description, File file)
         uploadingData,
+    required TResult Function() uploadSuccess,
+    required TResult Function() uploadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -876,6 +878,8 @@ mixin _$AddDataState {
     TResult? Function(String description)? fillAllFields,
     TResult? Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult? Function()? uploadSuccess,
+    TResult? Function()? uploadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -887,6 +891,8 @@ mixin _$AddDataState {
     TResult Function(String description)? fillAllFields,
     TResult Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult Function()? uploadSuccess,
+    TResult Function()? uploadError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -898,6 +904,8 @@ mixin _$AddDataState {
     required TResult Function(LoadingState value) loading,
     required TResult Function(FillAllFieldsState value) fillAllFields,
     required TResult Function(UploadingMediaState value) uploadingData,
+    required TResult Function(UploadSuccessState value) uploadSuccess,
+    required TResult Function(UploadErrorState value) uploadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -908,6 +916,8 @@ mixin _$AddDataState {
     TResult? Function(LoadingState value)? loading,
     TResult? Function(FillAllFieldsState value)? fillAllFields,
     TResult? Function(UploadingMediaState value)? uploadingData,
+    TResult? Function(UploadSuccessState value)? uploadSuccess,
+    TResult? Function(UploadErrorState value)? uploadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -918,6 +928,8 @@ mixin _$AddDataState {
     TResult Function(LoadingState value)? loading,
     TResult Function(FillAllFieldsState value)? fillAllFields,
     TResult Function(UploadingMediaState value)? uploadingData,
+    TResult Function(UploadSuccessState value)? uploadSuccess,
+    TResult Function(UploadErrorState value)? uploadError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -993,6 +1005,8 @@ class _$InitialState extends InitialState with DiagnosticableTreeMixin {
     required TResult Function(
             MediaType mediaType, String description, File file)
         uploadingData,
+    required TResult Function() uploadSuccess,
+    required TResult Function() uploadError,
   }) {
     return initalState();
   }
@@ -1007,6 +1021,8 @@ class _$InitialState extends InitialState with DiagnosticableTreeMixin {
     TResult? Function(String description)? fillAllFields,
     TResult? Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult? Function()? uploadSuccess,
+    TResult? Function()? uploadError,
   }) {
     return initalState?.call();
   }
@@ -1021,6 +1037,8 @@ class _$InitialState extends InitialState with DiagnosticableTreeMixin {
     TResult Function(String description)? fillAllFields,
     TResult Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult Function()? uploadSuccess,
+    TResult Function()? uploadError,
     required TResult orElse(),
   }) {
     if (initalState != null) {
@@ -1038,6 +1056,8 @@ class _$InitialState extends InitialState with DiagnosticableTreeMixin {
     required TResult Function(LoadingState value) loading,
     required TResult Function(FillAllFieldsState value) fillAllFields,
     required TResult Function(UploadingMediaState value) uploadingData,
+    required TResult Function(UploadSuccessState value) uploadSuccess,
+    required TResult Function(UploadErrorState value) uploadError,
   }) {
     return initalState(this);
   }
@@ -1051,6 +1071,8 @@ class _$InitialState extends InitialState with DiagnosticableTreeMixin {
     TResult? Function(LoadingState value)? loading,
     TResult? Function(FillAllFieldsState value)? fillAllFields,
     TResult? Function(UploadingMediaState value)? uploadingData,
+    TResult? Function(UploadSuccessState value)? uploadSuccess,
+    TResult? Function(UploadErrorState value)? uploadError,
   }) {
     return initalState?.call(this);
   }
@@ -1064,6 +1086,8 @@ class _$InitialState extends InitialState with DiagnosticableTreeMixin {
     TResult Function(LoadingState value)? loading,
     TResult Function(FillAllFieldsState value)? fillAllFields,
     TResult Function(UploadingMediaState value)? uploadingData,
+    TResult Function(UploadSuccessState value)? uploadSuccess,
+    TResult Function(UploadErrorState value)? uploadError,
     required TResult orElse(),
   }) {
     if (initalState != null) {
@@ -1168,6 +1192,8 @@ class _$OpenDialogState extends OpenDialogState with DiagnosticableTreeMixin {
     required TResult Function(
             MediaType mediaType, String description, File file)
         uploadingData,
+    required TResult Function() uploadSuccess,
+    required TResult Function() uploadError,
   }) {
     return openDialogState(media);
   }
@@ -1182,6 +1208,8 @@ class _$OpenDialogState extends OpenDialogState with DiagnosticableTreeMixin {
     TResult? Function(String description)? fillAllFields,
     TResult? Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult? Function()? uploadSuccess,
+    TResult? Function()? uploadError,
   }) {
     return openDialogState?.call(media);
   }
@@ -1196,6 +1224,8 @@ class _$OpenDialogState extends OpenDialogState with DiagnosticableTreeMixin {
     TResult Function(String description)? fillAllFields,
     TResult Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult Function()? uploadSuccess,
+    TResult Function()? uploadError,
     required TResult orElse(),
   }) {
     if (openDialogState != null) {
@@ -1213,6 +1243,8 @@ class _$OpenDialogState extends OpenDialogState with DiagnosticableTreeMixin {
     required TResult Function(LoadingState value) loading,
     required TResult Function(FillAllFieldsState value) fillAllFields,
     required TResult Function(UploadingMediaState value) uploadingData,
+    required TResult Function(UploadSuccessState value) uploadSuccess,
+    required TResult Function(UploadErrorState value) uploadError,
   }) {
     return openDialogState(this);
   }
@@ -1226,6 +1258,8 @@ class _$OpenDialogState extends OpenDialogState with DiagnosticableTreeMixin {
     TResult? Function(LoadingState value)? loading,
     TResult? Function(FillAllFieldsState value)? fillAllFields,
     TResult? Function(UploadingMediaState value)? uploadingData,
+    TResult? Function(UploadSuccessState value)? uploadSuccess,
+    TResult? Function(UploadErrorState value)? uploadError,
   }) {
     return openDialogState?.call(this);
   }
@@ -1239,6 +1273,8 @@ class _$OpenDialogState extends OpenDialogState with DiagnosticableTreeMixin {
     TResult Function(LoadingState value)? loading,
     TResult Function(FillAllFieldsState value)? fillAllFields,
     TResult Function(UploadingMediaState value)? uploadingData,
+    TResult Function(UploadSuccessState value)? uploadSuccess,
+    TResult Function(UploadErrorState value)? uploadError,
     required TResult orElse(),
   }) {
     if (openDialogState != null) {
@@ -1361,6 +1397,8 @@ class _$PickedMediaState extends PickedMediaState with DiagnosticableTreeMixin {
     required TResult Function(
             MediaType mediaType, String description, File file)
         uploadingData,
+    required TResult Function() uploadSuccess,
+    required TResult Function() uploadError,
   }) {
     return pickedMedia(media, isLoading);
   }
@@ -1375,6 +1413,8 @@ class _$PickedMediaState extends PickedMediaState with DiagnosticableTreeMixin {
     TResult? Function(String description)? fillAllFields,
     TResult? Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult? Function()? uploadSuccess,
+    TResult? Function()? uploadError,
   }) {
     return pickedMedia?.call(media, isLoading);
   }
@@ -1389,6 +1429,8 @@ class _$PickedMediaState extends PickedMediaState with DiagnosticableTreeMixin {
     TResult Function(String description)? fillAllFields,
     TResult Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult Function()? uploadSuccess,
+    TResult Function()? uploadError,
     required TResult orElse(),
   }) {
     if (pickedMedia != null) {
@@ -1406,6 +1448,8 @@ class _$PickedMediaState extends PickedMediaState with DiagnosticableTreeMixin {
     required TResult Function(LoadingState value) loading,
     required TResult Function(FillAllFieldsState value) fillAllFields,
     required TResult Function(UploadingMediaState value) uploadingData,
+    required TResult Function(UploadSuccessState value) uploadSuccess,
+    required TResult Function(UploadErrorState value) uploadError,
   }) {
     return pickedMedia(this);
   }
@@ -1419,6 +1463,8 @@ class _$PickedMediaState extends PickedMediaState with DiagnosticableTreeMixin {
     TResult? Function(LoadingState value)? loading,
     TResult? Function(FillAllFieldsState value)? fillAllFields,
     TResult? Function(UploadingMediaState value)? uploadingData,
+    TResult? Function(UploadSuccessState value)? uploadSuccess,
+    TResult? Function(UploadErrorState value)? uploadError,
   }) {
     return pickedMedia?.call(this);
   }
@@ -1432,6 +1478,8 @@ class _$PickedMediaState extends PickedMediaState with DiagnosticableTreeMixin {
     TResult Function(LoadingState value)? loading,
     TResult Function(FillAllFieldsState value)? fillAllFields,
     TResult Function(UploadingMediaState value)? uploadingData,
+    TResult Function(UploadSuccessState value)? uploadSuccess,
+    TResult Function(UploadErrorState value)? uploadError,
     required TResult orElse(),
   }) {
     if (pickedMedia != null) {
@@ -1506,6 +1554,8 @@ class _$LoadingState extends LoadingState with DiagnosticableTreeMixin {
     required TResult Function(
             MediaType mediaType, String description, File file)
         uploadingData,
+    required TResult Function() uploadSuccess,
+    required TResult Function() uploadError,
   }) {
     return loading();
   }
@@ -1520,6 +1570,8 @@ class _$LoadingState extends LoadingState with DiagnosticableTreeMixin {
     TResult? Function(String description)? fillAllFields,
     TResult? Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult? Function()? uploadSuccess,
+    TResult? Function()? uploadError,
   }) {
     return loading?.call();
   }
@@ -1534,6 +1586,8 @@ class _$LoadingState extends LoadingState with DiagnosticableTreeMixin {
     TResult Function(String description)? fillAllFields,
     TResult Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult Function()? uploadSuccess,
+    TResult Function()? uploadError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1551,6 +1605,8 @@ class _$LoadingState extends LoadingState with DiagnosticableTreeMixin {
     required TResult Function(LoadingState value) loading,
     required TResult Function(FillAllFieldsState value) fillAllFields,
     required TResult Function(UploadingMediaState value) uploadingData,
+    required TResult Function(UploadSuccessState value) uploadSuccess,
+    required TResult Function(UploadErrorState value) uploadError,
   }) {
     return loading(this);
   }
@@ -1564,6 +1620,8 @@ class _$LoadingState extends LoadingState with DiagnosticableTreeMixin {
     TResult? Function(LoadingState value)? loading,
     TResult? Function(FillAllFieldsState value)? fillAllFields,
     TResult? Function(UploadingMediaState value)? uploadingData,
+    TResult? Function(UploadSuccessState value)? uploadSuccess,
+    TResult? Function(UploadErrorState value)? uploadError,
   }) {
     return loading?.call(this);
   }
@@ -1577,6 +1635,8 @@ class _$LoadingState extends LoadingState with DiagnosticableTreeMixin {
     TResult Function(LoadingState value)? loading,
     TResult Function(FillAllFieldsState value)? fillAllFields,
     TResult Function(UploadingMediaState value)? uploadingData,
+    TResult Function(UploadSuccessState value)? uploadSuccess,
+    TResult Function(UploadErrorState value)? uploadError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1674,6 +1734,8 @@ class _$FillAllFieldsState extends FillAllFieldsState
     required TResult Function(
             MediaType mediaType, String description, File file)
         uploadingData,
+    required TResult Function() uploadSuccess,
+    required TResult Function() uploadError,
   }) {
     return fillAllFields(description);
   }
@@ -1688,6 +1750,8 @@ class _$FillAllFieldsState extends FillAllFieldsState
     TResult? Function(String description)? fillAllFields,
     TResult? Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult? Function()? uploadSuccess,
+    TResult? Function()? uploadError,
   }) {
     return fillAllFields?.call(description);
   }
@@ -1702,6 +1766,8 @@ class _$FillAllFieldsState extends FillAllFieldsState
     TResult Function(String description)? fillAllFields,
     TResult Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult Function()? uploadSuccess,
+    TResult Function()? uploadError,
     required TResult orElse(),
   }) {
     if (fillAllFields != null) {
@@ -1719,6 +1785,8 @@ class _$FillAllFieldsState extends FillAllFieldsState
     required TResult Function(LoadingState value) loading,
     required TResult Function(FillAllFieldsState value) fillAllFields,
     required TResult Function(UploadingMediaState value) uploadingData,
+    required TResult Function(UploadSuccessState value) uploadSuccess,
+    required TResult Function(UploadErrorState value) uploadError,
   }) {
     return fillAllFields(this);
   }
@@ -1732,6 +1800,8 @@ class _$FillAllFieldsState extends FillAllFieldsState
     TResult? Function(LoadingState value)? loading,
     TResult? Function(FillAllFieldsState value)? fillAllFields,
     TResult? Function(UploadingMediaState value)? uploadingData,
+    TResult? Function(UploadSuccessState value)? uploadSuccess,
+    TResult? Function(UploadErrorState value)? uploadError,
   }) {
     return fillAllFields?.call(this);
   }
@@ -1745,6 +1815,8 @@ class _$FillAllFieldsState extends FillAllFieldsState
     TResult Function(LoadingState value)? loading,
     TResult Function(FillAllFieldsState value)? fillAllFields,
     TResult Function(UploadingMediaState value)? uploadingData,
+    TResult Function(UploadSuccessState value)? uploadSuccess,
+    TResult Function(UploadErrorState value)? uploadError,
     required TResult orElse(),
   }) {
     if (fillAllFields != null) {
@@ -1869,6 +1941,8 @@ class _$UploadingMediaState extends UploadingMediaState
     required TResult Function(
             MediaType mediaType, String description, File file)
         uploadingData,
+    required TResult Function() uploadSuccess,
+    required TResult Function() uploadError,
   }) {
     return uploadingData(mediaType, description, file);
   }
@@ -1883,6 +1957,8 @@ class _$UploadingMediaState extends UploadingMediaState
     TResult? Function(String description)? fillAllFields,
     TResult? Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult? Function()? uploadSuccess,
+    TResult? Function()? uploadError,
   }) {
     return uploadingData?.call(mediaType, description, file);
   }
@@ -1897,6 +1973,8 @@ class _$UploadingMediaState extends UploadingMediaState
     TResult Function(String description)? fillAllFields,
     TResult Function(MediaType mediaType, String description, File file)?
         uploadingData,
+    TResult Function()? uploadSuccess,
+    TResult Function()? uploadError,
     required TResult orElse(),
   }) {
     if (uploadingData != null) {
@@ -1914,6 +1992,8 @@ class _$UploadingMediaState extends UploadingMediaState
     required TResult Function(LoadingState value) loading,
     required TResult Function(FillAllFieldsState value) fillAllFields,
     required TResult Function(UploadingMediaState value) uploadingData,
+    required TResult Function(UploadSuccessState value) uploadSuccess,
+    required TResult Function(UploadErrorState value) uploadError,
   }) {
     return uploadingData(this);
   }
@@ -1927,6 +2007,8 @@ class _$UploadingMediaState extends UploadingMediaState
     TResult? Function(LoadingState value)? loading,
     TResult? Function(FillAllFieldsState value)? fillAllFields,
     TResult? Function(UploadingMediaState value)? uploadingData,
+    TResult? Function(UploadSuccessState value)? uploadSuccess,
+    TResult? Function(UploadErrorState value)? uploadError,
   }) {
     return uploadingData?.call(this);
   }
@@ -1940,6 +2022,8 @@ class _$UploadingMediaState extends UploadingMediaState
     TResult Function(LoadingState value)? loading,
     TResult Function(FillAllFieldsState value)? fillAllFields,
     TResult Function(UploadingMediaState value)? uploadingData,
+    TResult Function(UploadSuccessState value)? uploadSuccess,
+    TResult Function(UploadErrorState value)? uploadError,
     required TResult orElse(),
   }) {
     if (uploadingData != null) {
@@ -1962,4 +2046,303 @@ abstract class UploadingMediaState extends AddDataState {
   @JsonKey(ignore: true)
   _$$UploadingMediaStateCopyWith<_$UploadingMediaState> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UploadSuccessStateCopyWith<$Res> {
+  factory _$$UploadSuccessStateCopyWith(_$UploadSuccessState value,
+          $Res Function(_$UploadSuccessState) then) =
+      __$$UploadSuccessStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UploadSuccessStateCopyWithImpl<$Res>
+    extends _$AddDataStateCopyWithImpl<$Res, _$UploadSuccessState>
+    implements _$$UploadSuccessStateCopyWith<$Res> {
+  __$$UploadSuccessStateCopyWithImpl(
+      _$UploadSuccessState _value, $Res Function(_$UploadSuccessState) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UploadSuccessState extends UploadSuccessState
+    with DiagnosticableTreeMixin {
+  const _$UploadSuccessState() : super._();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AddDataState.uploadSuccess()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AddDataState.uploadSuccess'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UploadSuccessState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initalState,
+    required TResult Function(MediaModel media) openDialogState,
+    required TResult Function(MediaModel media, bool isLoading) pickedMedia,
+    required TResult Function() loading,
+    required TResult Function(String description) fillAllFields,
+    required TResult Function(
+            MediaType mediaType, String description, File file)
+        uploadingData,
+    required TResult Function() uploadSuccess,
+    required TResult Function() uploadError,
+  }) {
+    return uploadSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initalState,
+    TResult? Function(MediaModel media)? openDialogState,
+    TResult? Function(MediaModel media, bool isLoading)? pickedMedia,
+    TResult? Function()? loading,
+    TResult? Function(String description)? fillAllFields,
+    TResult? Function(MediaType mediaType, String description, File file)?
+        uploadingData,
+    TResult? Function()? uploadSuccess,
+    TResult? Function()? uploadError,
+  }) {
+    return uploadSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initalState,
+    TResult Function(MediaModel media)? openDialogState,
+    TResult Function(MediaModel media, bool isLoading)? pickedMedia,
+    TResult Function()? loading,
+    TResult Function(String description)? fillAllFields,
+    TResult Function(MediaType mediaType, String description, File file)?
+        uploadingData,
+    TResult Function()? uploadSuccess,
+    TResult Function()? uploadError,
+    required TResult orElse(),
+  }) {
+    if (uploadSuccess != null) {
+      return uploadSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialState value) initalState,
+    required TResult Function(OpenDialogState value) openDialogState,
+    required TResult Function(PickedMediaState value) pickedMedia,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(FillAllFieldsState value) fillAllFields,
+    required TResult Function(UploadingMediaState value) uploadingData,
+    required TResult Function(UploadSuccessState value) uploadSuccess,
+    required TResult Function(UploadErrorState value) uploadError,
+  }) {
+    return uploadSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialState value)? initalState,
+    TResult? Function(OpenDialogState value)? openDialogState,
+    TResult? Function(PickedMediaState value)? pickedMedia,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(FillAllFieldsState value)? fillAllFields,
+    TResult? Function(UploadingMediaState value)? uploadingData,
+    TResult? Function(UploadSuccessState value)? uploadSuccess,
+    TResult? Function(UploadErrorState value)? uploadError,
+  }) {
+    return uploadSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialState value)? initalState,
+    TResult Function(OpenDialogState value)? openDialogState,
+    TResult Function(PickedMediaState value)? pickedMedia,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(FillAllFieldsState value)? fillAllFields,
+    TResult Function(UploadingMediaState value)? uploadingData,
+    TResult Function(UploadSuccessState value)? uploadSuccess,
+    TResult Function(UploadErrorState value)? uploadError,
+    required TResult orElse(),
+  }) {
+    if (uploadSuccess != null) {
+      return uploadSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadSuccessState extends AddDataState {
+  const factory UploadSuccessState() = _$UploadSuccessState;
+  const UploadSuccessState._() : super._();
+}
+
+/// @nodoc
+abstract class _$$UploadErrorStateCopyWith<$Res> {
+  factory _$$UploadErrorStateCopyWith(
+          _$UploadErrorState value, $Res Function(_$UploadErrorState) then) =
+      __$$UploadErrorStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UploadErrorStateCopyWithImpl<$Res>
+    extends _$AddDataStateCopyWithImpl<$Res, _$UploadErrorState>
+    implements _$$UploadErrorStateCopyWith<$Res> {
+  __$$UploadErrorStateCopyWithImpl(
+      _$UploadErrorState _value, $Res Function(_$UploadErrorState) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UploadErrorState extends UploadErrorState with DiagnosticableTreeMixin {
+  const _$UploadErrorState() : super._();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AddDataState.uploadError()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AddDataState.uploadError'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UploadErrorState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initalState,
+    required TResult Function(MediaModel media) openDialogState,
+    required TResult Function(MediaModel media, bool isLoading) pickedMedia,
+    required TResult Function() loading,
+    required TResult Function(String description) fillAllFields,
+    required TResult Function(
+            MediaType mediaType, String description, File file)
+        uploadingData,
+    required TResult Function() uploadSuccess,
+    required TResult Function() uploadError,
+  }) {
+    return uploadError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initalState,
+    TResult? Function(MediaModel media)? openDialogState,
+    TResult? Function(MediaModel media, bool isLoading)? pickedMedia,
+    TResult? Function()? loading,
+    TResult? Function(String description)? fillAllFields,
+    TResult? Function(MediaType mediaType, String description, File file)?
+        uploadingData,
+    TResult? Function()? uploadSuccess,
+    TResult? Function()? uploadError,
+  }) {
+    return uploadError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initalState,
+    TResult Function(MediaModel media)? openDialogState,
+    TResult Function(MediaModel media, bool isLoading)? pickedMedia,
+    TResult Function()? loading,
+    TResult Function(String description)? fillAllFields,
+    TResult Function(MediaType mediaType, String description, File file)?
+        uploadingData,
+    TResult Function()? uploadSuccess,
+    TResult Function()? uploadError,
+    required TResult orElse(),
+  }) {
+    if (uploadError != null) {
+      return uploadError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialState value) initalState,
+    required TResult Function(OpenDialogState value) openDialogState,
+    required TResult Function(PickedMediaState value) pickedMedia,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(FillAllFieldsState value) fillAllFields,
+    required TResult Function(UploadingMediaState value) uploadingData,
+    required TResult Function(UploadSuccessState value) uploadSuccess,
+    required TResult Function(UploadErrorState value) uploadError,
+  }) {
+    return uploadError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialState value)? initalState,
+    TResult? Function(OpenDialogState value)? openDialogState,
+    TResult? Function(PickedMediaState value)? pickedMedia,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(FillAllFieldsState value)? fillAllFields,
+    TResult? Function(UploadingMediaState value)? uploadingData,
+    TResult? Function(UploadSuccessState value)? uploadSuccess,
+    TResult? Function(UploadErrorState value)? uploadError,
+  }) {
+    return uploadError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialState value)? initalState,
+    TResult Function(OpenDialogState value)? openDialogState,
+    TResult Function(PickedMediaState value)? pickedMedia,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(FillAllFieldsState value)? fillAllFields,
+    TResult Function(UploadingMediaState value)? uploadingData,
+    TResult Function(UploadSuccessState value)? uploadSuccess,
+    TResult Function(UploadErrorState value)? uploadError,
+    required TResult orElse(),
+  }) {
+    if (uploadError != null) {
+      return uploadError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadErrorState extends AddDataState {
+  const factory UploadErrorState() = _$UploadErrorState;
+  const UploadErrorState._() : super._();
 }

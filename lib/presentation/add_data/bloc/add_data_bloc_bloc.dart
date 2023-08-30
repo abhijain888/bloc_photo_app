@@ -47,10 +47,17 @@ class AddDataBloc extends Bloc<AddDataEvent, AddDataState> {
         file: media.media!,
       );
 
-      emit(PickedMediaState(
-        media: media,
-        isLoading: false,
-      ));
+      if (response == null) {
+        emit(const UploadErrorState());
+        emit(PickedMediaState(
+          media: media,
+          isLoading: false,
+        ));
+        return;
+      }
+
+      emit(const UploadSuccessState());
+
       return;
     }
   }

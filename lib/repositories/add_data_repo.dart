@@ -10,14 +10,14 @@ class AddDataRepo {
     required File file,
   }) async {
     final response = await NetworkApi.postFormData(
-      url: uploadImageOrVideo,
+      url: uploadImageOrVideoUrl,
       httpRequestType: 'POST',
       mediaType: mediaType,
       body: {"description": description},
       image: file,
     );
     print(response);
-    if (response == null) {}
+    if (response == null) return null;
     return response;
   }
 }

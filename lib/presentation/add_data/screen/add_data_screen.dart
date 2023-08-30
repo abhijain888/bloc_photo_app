@@ -19,30 +19,39 @@ class AddDataScreen extends StatelessWidget {
       ),
       body: BlocConsumer<AddDataBloc, AddDataState>(
         listener: (context, state) {
-          state.whenOrNull(
-            openDialogState: (media) {
-              print("openDialogState");
-              showImagePickerDialog(
-                context: context,
-                media: media.mediaType!,
-              ).then(
-                (source) {
-                  context.read<AddDataBloc>().add(
-                        AddDataEvent.pickMedia(
-                          source: source,
-                          media: media,
-                        ),
-                      );
-                },
-              );
-            },
-            fillAllFields: (description) {
-              showSnackbar(
-                context: context,
-                title: description,
-              );
-            },
-          );
+          state.whenOrNull(openDialogState: (media) {
+            print("openDialogState");
+            showImagePickerDialog(
+              context: context,
+              media: media.mediaType!,
+            ).then(
+              (source) {
+                context.read<AddDataBloc>().add(
+                      AddDataEvent.pickMedia(
+                        source: source,
+                        media: media,
+                      ),
+                    );
+              },
+            );
+          }, fillAllFields: (description) {
+            showSnackbar(
+              context: context,
+              title: description,
+            );
+          }, uploadError: () {
+            Navigator.pop<bool>(context, false);
+            showSnackbar(
+              context: context,
+              title: "Some Error Occured",
+            );
+          }, uploadSuccess: () {
+            Navigator.pop<bool>(context, true);
+            showSnackbar(
+              context: context,
+              title: "Success",
+            );
+          });
         },
         builder: (context, state) {
           return Stack(

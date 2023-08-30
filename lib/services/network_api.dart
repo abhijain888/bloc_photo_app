@@ -6,6 +6,29 @@ import 'package:bloc_imgur_app/utils/util.dart';
 import 'package:http/http.dart' as http;
 
 class NetworkApi {
+  static Future<dynamic> getResponse({
+    required String url,
+    String? staticUrl = baseUrl,
+  }) async {
+    try {
+      final response = await http.get(
+        Uri.parse(staticUrl! + url),
+        headers: headersGet,
+      );
+      print(response.body);
+
+      // return jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body);
+      } else {
+        return null;
+      }
+    } on SocketException {
+      print('No internet Connection');
+      return null;
+    }
+  }
+
   static Future<dynamic> postFormData({
     required String url,
     required String httpRequestType,
@@ -31,7 +54,7 @@ class NetworkApi {
         );
       }
 
-      request.headers.addAll(headers);
+      request.headers.addAll(headersPost);
 
       request.fields.addAll(body);
 
