@@ -1,17 +1,20 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:bloc_imgur_app/utils/api_const.dart';
+import 'package:bloc_imgur_app/utils/headers.dart';
+import 'package:bloc_imgur_app/utils/util.dart';
 import 'package:http/http.dart' as http;
 
 class NetworkApi {
   static Future<dynamic> postFormData({
     required String url,
     required String httpRequestType,
-    Map<String, String>? headers,
+    required MediaType mediaType,
     File? image,
     required Map<String, String> body,
   }) async {
     try {
-      var uri = Uri.parse(url);
+      var uri = Uri.parse(baseUrl + url);
       var request = http.MultipartRequest(
         httpRequestType,
         uri,
@@ -19,31 +22,34 @@ class NetworkApi {
 
       if (image != null) {
         request.files.add(
-          await http.MultipartFile.fromPath('image', image.path),
+          await http.MultipartFile.fromPath(
+            mediaType == MediaType.image
+                ? MediaType.image.name
+                : MediaType.video.name,
+            image.path,
+          ),
         );
       }
 
-      request.headers.addAll(headers ?? {});
+      request.headers.addAll(headers);
 
       request.fields.addAll(body);
 
       final streamedResponse = await request.send();
 
-      final response = await http.Response.fromStream(streamedResponse);
+      if (streamedResponse.statusCode == 200) {
+        final response = await http.Response.fromStream(streamedResponse);
 
-      return jsonDecode(response.body);
-
-      // if (response.statusCode == 400) {
-      //   return "Error uploading data";
-      // }
-
-      // if (response.statusCode == 201) {
-      //   return jsonDecode(response.body);
-      // }
+        return jsonDecode(response.body);
+      } else {
+        return null;
+      }
     } on SocketException {
       print('No internet Connection');
+      return null;
     } catch (e) {
       print(e);
+      return null;
     }
   }
 
@@ -54,7 +60,7 @@ class NetworkApi {
   ) async {
     try {
       final response = await http.post(
-        Uri.parse(url),
+        Uri.parse(baseUrl + url),
         headers: headers,
         body: json.encode(body),
       );
